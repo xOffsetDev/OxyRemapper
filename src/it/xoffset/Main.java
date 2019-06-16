@@ -12,29 +12,16 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 
 public class Main
 {
-    private JFrame frmSsfucker;
+    private JFrame main;
     private JTextField input;
     private JTextField output;
 
     public static void main(final String[] args) {
         try {
             UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
-        }
-        catch (Throwable e) {
-            e.printStackTrace();
-        }
-        EventQueue.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    final Main window = new Main();
-                    window.frmSsfucker.setVisible(true);
-                }
-                catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        });
+            final Main window = new Main();
+            window.main.setVisible(true);
+        } catch (Throwable e) { }
     }
 
     public Main() {
@@ -42,23 +29,24 @@ public class Main
     }
 
     private void initialize() {
-        (this.frmSsfucker = new JFrame()).setResizable(false);
-        this.frmSsfucker.setTitle("SSFucker");
-        this.frmSsfucker.setBounds(100, 100, 296, 154);
-        this.frmSsfucker.setDefaultCloseOperation(3);
-        this.frmSsfucker.getContentPane().setLayout(null);
+        this.main = new JFrame();
+        this.main.setResizable(false);
+        this.main.setTitle("OxyRemapper");
+        this.main.setBounds(100, 100, 296, 154);
+        this.main.setDefaultCloseOperation(3);
+        this.main.getContentPane().setLayout(null);
         (this.input = new JTextField()).setBounds(10, 25, 238, 20);
-        this.frmSsfucker.getContentPane().add(this.input);
+        this.main.getContentPane().add(this.input);
         this.input.setColumns(10);
         final JLabel lblInput = new JLabel("Input:");
         lblInput.setBounds(12, 8, 46, 14);
-        this.frmSsfucker.getContentPane().add(lblInput);
+        this.main.getContentPane().add(lblInput);
         (this.output = new JTextField()).setColumns(10);
         this.output.setBounds(10, 65, 238, 20);
-        this.frmSsfucker.getContentPane().add(this.output);
+        this.main.getContentPane().add(this.output);
         final JLabel lblOutput = new JLabel("Output");
         lblOutput.setBounds(12, 48, 46, 14);
-        this.frmSsfucker.getContentPane().add(lblOutput);
+        this.main.getContentPane().add(lblOutput);
         final JButton btnin = new JButton("...");
         btnin.addActionListener(new ActionListener() {
             @Override
@@ -71,7 +59,7 @@ public class Main
             }
         });
         btnin.setBounds(249, 24, 32, 23);
-        this.frmSsfucker.getContentPane().add(btnin);
+        this.main.getContentPane().add(btnin);
         final JButton btnout = new JButton("...");
         btnout.addActionListener(new ActionListener() {
             @Override
@@ -84,7 +72,7 @@ public class Main
             }
         });
         btnout.setBounds(249, 64, 32, 23);
-        this.frmSsfucker.getContentPane().add(btnout);
+        this.main.getContentPane().add(btnout);
         final JButton btnProcess = new JButton("Process");
         btnProcess.addActionListener(new ActionListener() {
             @Override
@@ -97,6 +85,6 @@ public class Main
             }
         });
         btnProcess.setBounds(10, 96, 270, 23);
-        this.frmSsfucker.getContentPane().add(btnProcess);
+        this.main.getContentPane().add(btnProcess);
     }
 }
